@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="pragma" content="no-cache"/> 
+<meta http-equiv="cache-control" content="no-cache,must-revalidate"/>
+<meta http-equiv="expires" content="0"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="static/css/main.css"  rel="Stylesheet"  type="text/css"/>
+<title>推荐业务管理系统</title>
+<script src="static/js/jquery-1.11.1.min.js"></script>
+<script src="static/js/jquery.upload.js"></script>
+<script>
+$$(document).ready(function(){
+	  $$("#testsearch1").click(function(){
+		  $$.post("/testsearch",
+		  {
+		    inputsearch:$$("#mysearch1").val()
+		  },
+		  function(data,status){
+			  if(status=="success"){
+				  $$("#jieguo1").html(data);
+				  if($$("#jieguo1").height()>=180){
+					  $$("#jieguo1").height(180);
+					  $$("#jieguo1").css("overflow","scroll");
+					  $$("#jieguo1").html(data);
+				  }else{
+					  $$("#jieguo1").css("height","");
+					  $$("#jieguo1").css("overflow","hidden");
+					  $$("#jieguo1").html(data);
+				  }
+			  }
+		  });
+		});
+	  
+	  $$("#testsearch2").click(function(){
+		  $$.post("/testsearch",
+		  {
+			 inputsearch:$$("#mysearch2").val()
+		  },
+		  function(data,status){
+			  
+			  if(status=="success"){
+				  $$("#jieguo2").html(data);
+				  if($$("#jieguo2").height()>=180){
+					  $$("#jieguo2").height(180);
+					  $$("#jieguo2").css("overflow","scroll");
+					  $$("#jieguo2").html(data);
+				  }else{
+					  $$("#jieguo2").css("height","");
+					  $$("#jieguo2").css("overflow","hidden");
+					  $$("#jieguo2").html(data);
+				  }
+			  }
+		  });
+		});
+	  
+	  $$("#testsearch3").click(function(){
+		  $$.post("/testsearch",
+		  {
+			 inputsearch:$$("#mysearch3").val()
+		  },
+		  function(data,status){
+			  
+			  if(status=="success"){
+				  $$("#jieguo3").html(data);
+				  if($$("#jieguo3").height()>=180){
+					  $$("#jieguo3").height(180);
+					  $$("#jieguo3").css("overflow","scroll");
+					  $$("#jieguo3").html(data);
+				  }else{
+					  $$("#jieguo3").css("height","");
+					  $$("#jieguo3").css("overflow","hidden");
+					  $$("#jieguo3").html(data);
+				  }
+			  }
+		  });
+		});
+	  
+	  $$("#testsearch4").click(function(){
+		  $$.post("/testsearch",
+		  {
+			 inputsearch:$$("#mysearch4").val()
+		  },
+		  function(data,status){
+			 
+			  if(status=="success"){
+				  $$("#jieguo4").html(data);
+				  if($$("#jieguo4").height()>=180){
+					  $$("#jieguo4").height(180);
+					  $$("#jieguo4").css("overflow","scroll");
+					  $$("#jieguo4").html(data);
+				  }else{
+					  $$("#jieguo4").css("height","");
+					  $$("#jieguo4").css("overflow","hidden");
+					  $$("#jieguo4").html(data);
+				  }
+			  }
+		  });
+		});
+	  
+	  $$("#testsearch5").click(function(){
+		  $$.post("/testsearch",
+		  {
+			 inputsearch:$$("#mysearch5").val()
+		  },
+		  function(data,status){
+			  
+			  if(status=="success"){
+				  $$("#jieguo5").html(data);
+				  if($$("#jieguo5").height()>=180){
+					  $$("#jieguo5").height(180);
+					  $$("#jieguo5").css("overflow","scroll");
+					  $$("#jieguo5").html(data);
+				  }else{
+					  $$("#jieguo5").css("height","");
+					  $$("#jieguo5").css("overflow","hidden");
+					  $$("#jieguo5").html(data);
+				  }
+			  }
+		  });
+		});
+	  
+	  $$("#testsearch6").click(function(){
+		  $$.post("/testsearch",
+		  {
+			 inputsearch:$$("#mysearch6").val()
+		  },
+		  function(data,status){
+			  
+			  if(status=="success"){
+				  $$("#jieguo6").html(data);
+				  if($$("#jieguo6").height()>=180){
+					  $$("#jieguo6").height(180);
+					  $$("#jieguo6").css("overflow","scroll");
+					  $$("#jieguo6").html(data);
+				  }else{
+					  $$("#jieguo6").css("height","");
+					  $$("#jieguo6").css("overflow","hidden");
+					  $$("#jieguo6").html(data);
+				  }
+			  }
+		  });
+		});
+	  
+	  $$("#id_formtj").click(function(){
+		  
+		  //alert("类型"+$$(".type").val()+"\n广告位"+$$(".guanggaowei").val()
+				//  +"\n排期"+$$(".paiqi").val()+"\n视频数"+$$(".shipinshu").val());
+		  $$.post("/tijiao",
+		  {
+			 shipintype:$$(".type").val(),
+			 guanggaowei:$$(".guanggaowei").val(),
+			 paiqi:$$(".paiqi").val(),
+			 shipinshu:$$(".shipinshu").val()
+		  },
+		  function(data,status){
+			  if(status=="success"){
+				  $$("#testxianshi").html(data.htmlstring);
+				  if($$(".type").val()=="free")
+				  {
+					  $$("#yulanlink").attr("href","http://10.4.72.70:8080/iPG/T-nsp_N9101/dpdb/"+data.filename+"?pmId=");
+                      $$("#yulanlink").text("http://10.4.72.70:8080/iPG/T-nsp_N9101/dpdb/"+data.filename+"?pmId=");
+                      }
+				  else if($$(".type").val()=="nofree"){
+					  $$("#yulanlink").attr("href","http://10.4.72.70:8080/iPG/T-nsp_N9101/vodDetail/"+data.filename+"?pmId="+$$("#pmid1").val());
+                      $$("#yulanlink").text("http://10.4.72.70:8080/iPG/T-nsp_N9101/vodDetail/"+data.filename+"?pmId="+$$("#pmid1").val());
+				  }
+				  if($$(".type").val()=="free")
+				  {
+					  $$("#localyulan").attr("href","static/upload/free/"+data.filename);
+                      $$("#localyulan").text(data.filename);
+                      }
+				  else if($$(".type").val()=="nofree"){
+					  $$("#localyulan").attr("href","static/upload/nofree/"+data.filename+"?pmId="+$$("#pmid1").val());
+                      $$("#localyulan").text(data.filename);
+				  }
+           
+				  }
+			  }
+		  ,"json");
+	  });
+	  
+	  /*单张海报*/
+	  $$("#tihuandanhaibao").click(function(){
+			$$.upload({
+              // 上传地址
+              url: '/uploadhaibao',
+              // 文件域名字
+              fileName: 'haibao',
+              // 其他表单数据
+              params: {
+              	shipintype:$$(".type").val(),
+     			 	guanggaowei:$$(".guanggaowei").val(),
+     			 	paiqi:$$(".paiqi").val(),
+     			 	shipinshu:$$(".shipinshu").val()
+              },
+              // 上传完成后, 返回json, text
+              dataType: 'text',
+              // 上传之前回调,return true表示可继续上传
+              onSend: function() {
+                      return true;
+              },
+              // 上传之后回调
+              onComplate: function(data) {
+            	  	  var fullstring = data
+            	  	  sub = fullstring.substring(31,fullstring.lenth)
+            	  	  if(data==0){
+            	  		  alert("错误,请选择免费模版");
+            	  	  }
+            	  	  else{
+                      alert(data);
+                      $$("#yulanlink").attr("href","http://10.4.72.122/zttg/"+sub);
+                      $$("#yulanlink").text("http://10.4.72.122/zttg/"+sub);
+                      }
+              }
+      });
+	  });	
+			
+	  /*提交背景代码*/
+	  $$("#tijiaobeijing").click(function(){
+			$$.upload({
+                // 上传地址
+                url: '/uploadbg',
+                // 文件域名字
+                fileName: 'beijing',
+                // 其他表单数据
+                params: {
+                	shipintype:$$(".type").val(),
+       			 	guanggaowei:$$(".guanggaowei").val(),
+       			 	paiqi:$$(".paiqi").val(),
+       			 	shipinshu:$$(".shipinshu").val()
+                },
+                // 上传完成后, 返回json, text
+                dataType: 'text',
+                // 上传之前回调,return true表示可继续上传
+                onSend: function() {
+                        return true;
+                },
+                // 上传之后回调
+                onComplate: function(data) {
+                        alert(data);
+                }
+        });
+			 
+		});
+	  /*同步服务器按钮代码*/
+	  $$("#tongbufuwuqi").click(function(){
+		  if(window.confirm('确定要同步到服务器吗?')){
+              //alert("确定");
+              $$.post("/tongbufuwuqi",
+		  		{
+		  		},
+		  	  function(data,status){
+			  	if(status=="success"){
+				  alert(data);
+			  	}else{
+				  alert("出错了"+status);
+			  	}
+		  });
+ 
+           }else{
+              //alert("取消");
+              return false;
+          }
+		  
+		});
+	  
+	  /*同步服务器1按钮代码*/
+	  $$("#tongbufuwuqi1").click(function(){
+		  if(window.confirm('确定要同步到服务器1吗?')){
+              //alert("确定");
+              $$.post("/tongbufuwuqi1",
+		  		{
+		  		},
+		  	  function(data,status){
+			  	if(status=="success"){
+				  alert(data);
+			  	}else{
+				  alert("出错了"+status);
+			  	}
+		  });
+ 
+           }else{
+              //alert("取消");
+              return false;
+          }
+		  
+		});
+	  
+	  
+	  /*点击hr隐藏*/
+	  $$("hr").click(function(){
+		$$("#sixform").toggle();
+		  });
+});
+</script>
+</head>
+
+<body>
+<div id="sixform">
+<div id="topthreeform" style="clear:right;">
+<form onsubmit="return false;">
+<input type="text" id="mysearch1" name="searchtext" class="topinput"  />
+<input type="button" id="testsearch1" value="搜索" class="topbutton"/>
+<div id="jieguo1" style="clear:both;"></div>
+</form>
+
+<form onsubmit="return false;">
+<input type="text" id="mysearch2" name="searchtext" class="topinput"  />
+<input type="button" id="testsearch2" value="搜索" class="topbutton"/>
+<div id="jieguo2" style="clear:both;"></div>
+</form>
+
+<form style="clear:right;" onsubmit="return false;">
+<input type="text" id="mysearch3" name="searchtext" class="topinput"  />
+<input type="button" id="testsearch3" value="搜索" class="topbutton"/>
+<div id="jieguo3" style="clear:both;"></div>
+</form>
+</div>
+
+<!-- 下面三个表 -->
+<div id="bottomthreeform" style="clear:right;"> 
+<form onsubmit="return false;">
+<input type="text" id="mysearch4" name="searchtext" class="topinput"  />
+<input type="button" id="testsearch4" value="搜索" class="topbutton"/>
+<div id="jieguo4" style="clear:both;"></div>
+</form>
+
+<form onsubmit="return false;">
+<input type="text" id="mysearch5" name="searchtext" class="topinput" />
+<input type="button" id="testsearch5" value="搜索" class="topbutton"/>
+<div id="jieguo5" style="clear:both;"></div>
+</form>
+
+<form style="clear:right;" onsubmit="return false;">
+<input type="text" id="mysearch6" name="searchtext" class="topinput"  />
+<input type="button" id="testsearch6" value="搜索" class="topbutton"/>
+<div id="jieguo6" style="clear:both;"></div>
+</form>
+</div>
+</div>
+<br/>
+
+<div>
+<hr style="height:5px;"/>
+</div>
+
+<div id="bottompart">
+<div style="float:left;margin-right:25px;">
+<form>
+<p><span>模版类型</span></p>
+类型:
+<select id="u13_input" class="type">
+	<option value="free">免费</option>
+	<option value="nofree">收费</option>
+</select>
+视频数:
+<select class="shipinshu">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="news1">新闻1</option>
+          <option value="news2">新闻2</option>
+          <option value="news3">新闻3</option>
+          <option value="news4">新闻4</option>
+          
+</select>
+广告位:
+<select id="u14_input" class="guanggaowei">
+          <option value="sy2" >首页 2</option>
+          <option value="sy3">首页 3</option>
+          <option value="sy4">首页 4</option>
+          <option value="sy6">首页 6</option>
+          <option value="sy7">首页 7</option>
+          <option value="hk01">回看01</option>
+          <option value="hk02">回看02</option>
+          <option value="hk03">回看03</option>
+          <option value="zb01">直播01</option>
+          <option value="zb02">直播02</option>
+</select>
+排期:
+<select id="u15_input" class="paiqi">
+		  <option value="0">无</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+</select>
+<input type="button" class="topbutton" value="提交" id="id_formtj"/>
+</form>
+<div id="testxianshi" style="width:100%;height:230px;margin:0 auto;text-align:center;"></div>
+</div>
+
+
+<div id="fileInputContainer">
+<form>
+   <lable>背景图: <input type="button" value="提交背景图" id="tijiaobeijing"/></lable>
+   <br/><br/>
+   <lable>替换单海报:<input type="button" value="替换单海报" id="tihuandanhaibao"/></lable>
+   <br/><br/>
+   <lable>本地预览链接:<a target="_blank" href="#" id="localyulan">未生成</a></lable>
+   <br/><br/>
+   <lable>生成资源链接:<a target="_blank" href="#" id="yulanlink">未生成</a></lable>
+	<br/></br>
+   <lable>同步服务器:<input type="button" value="同步服务器" id="tongbufuwuqi"/></lable>
+   <br/></br>
+   <lable>同步服务器1测试:<input type="button" value="同步服务器1测试" id="tongbufuwuqi1"/></lable>
+   
+</form>
+</div>
+</div>
+	
+</body>
+</html>

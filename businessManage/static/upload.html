@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="static/css/login.css"  rel="Stylesheet"  type="text/css"/>
+<title>推荐业务管理系统</title>
+</head>
+<body>
+<p><span>模版类型</span></p>
+类型:
+<select id="u13_input">
+	<option value="收费">收费</option>
+   	<option value="免费">免费</option>
+</select>
+广告位:
+<select id="u14_input">
+          <option value="首页 2">首页 2</option>
+          <option value="首页 3">首页 3</option>
+          <option value="首页 4">首页 4</option>
+          <option value="首页 6">首页 6</option>
+          <option value="首页 7">首页 7</option>
+          <option value="回看01">回看01</option>
+          <option value="回看02">回看02</option>
+          <option value="回看03">回看03</option>
+          <option value="直播01">直播01</option>
+          <option value="直播02">直播02</option>
+</select>
+排期:
+<select id="u15_input">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+</select>
+背景图:
+<input type="file"/>
+<br/>
+<br/>
+
+	视频<input id="u58_input" type="checkbox" value="视频" />
+	<form action='/upload' method='post' enctype="multipart/form-data" target='/upload'>
+		小图片<input type="file" id="myfile" name="myfile"/>
+		PMID<input type="text" id="pmid"/>
+		<input type="submit" id="shangchuan" value="替换"/>
+	</form>
+	<frame name="hideframe"></frame>
+	<br/>
+</body>
+
+</html>

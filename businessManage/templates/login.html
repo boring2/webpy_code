@@ -1,0 +1,69 @@
+$def with(errors)
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="static/css/login.css"  rel="Stylesheet"  type="text/css"/>
+<title>推荐业务管理系统</title>
+</head>
+<script type="text/javascript" src="static/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+function login(){
+	var user = document.getElementById("username").value;
+	var pw = document.getElementById("password").value;
+	if(user == ""){
+		alert("账号不能为空");
+		return false
+	}
+	else if(pw == ""){
+		alert("密码不能为空");
+		return false
+	}
+	
+}
+
+</script>
+<body>
+	
+    <div id="header">
+        <div id="logo_image">
+       		 <!--<img src="static/images/title.jpg"/>-->
+        </div>
+        <div id="space"></div>
+        <div id="header_right">
+            <a href="#" >联系我们</a>
+            <a href="#" >帮助中心</a>
+        </div>
+    </div>
+    
+	<DIV id=login>
+		<FORM method="post" action="/">
+			<P id="info"> 推荐业务管理系统</P>
+			<ul>
+			$if errors:
+				$for e in errors:
+					<li style='color:red;'>$e</li>
+			</ul>
+			<DIV class="control-group">
+				<!--<SPAN class=icon-user></SPAN>-->
+				<INPUT id="username" type="text" name="username" placeholder="用户名">
+			</DIV>
+			<DIV class="control-group">
+				<!--<SPAN class=icon-lock></SPAN>-->
+				<INPUT id="password" type="password" name="password" placeholder="密码"> 
+			</DIV>
+			<DIV class="remember-me">
+				<INPUT id="rm" value="1" type="checkbox" name="remember">
+				<LABEL for="rm">记住我</LABEL> 
+                
+				<A id="forget-password" href="#">忘记密码?</A>
+			</DIV>
+			<DIV class="login-btn">
+				
+                <input type="submit" name="submit" id="login-btn" value="登 录" onclick="return login();"/> 
+			</DIV>
+		</FORM>
+	</DIV>
+	<DIV id=login-copyright>广东广电网络中山公司©2010-2014</DIV>
+</body>
+</html>

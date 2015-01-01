@@ -1,0 +1,48 @@
+﻿ body
+        {
+			background:url(image/load_bg.jpg) no-repeat scroll right bottom 
+            font-family: Verdana;
+            font-size: 13px;
+        }
+        .divHeaderTable
+        {
+            width: 100%;
+            padding-bottom:5px;
+            display:block;
+        }
+        .divHeaderRow
+        {
+            width: 100%; /* add extra that you want to for header column */
+            display:block;
+            height:105px;
+        }
+        .divHeaderColumn
+        {
+            float: left;
+            width: 33%;
+            display:block;
+        }
+         .divTable
+        {
+            width: 100%;
+            display:block;
+            padding-top:10px;
+            padding-bottom:10px;
+            padding-right:10px;
+            padding-left:10px;
+            display:block;
+        }
+        .divRow
+        {
+        	width: 99%; 
+        	display:block;
+        	padding-bottom:5px;
+        	display:block;
+        }
+        .divColumn
+        {
+        	float: left;
+            width: 24%;
+            display:block;
+            display:block;
+        }
